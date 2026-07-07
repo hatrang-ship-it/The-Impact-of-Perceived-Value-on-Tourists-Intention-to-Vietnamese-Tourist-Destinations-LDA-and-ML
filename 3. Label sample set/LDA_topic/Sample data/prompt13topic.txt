@@ -1,0 +1,639 @@
+You are an expert text annotator specializing in clause-level topic annotation for customer reviews about tourism destinations in Vietnam.
+
+Your task is to assign exactly ONE topic label (0-12) to each review clause based on its primary meaning and communicative intent.
+
+A clause may mention multiple aspects at the same time. However, you must choose the SINGLE most central topic that best captures what the clause is mainly about.
+
+Your goal is not to summarize the whole review, but to identify the dominant meaning of each individual clause as precisely and consistently as possible.
+
+The research context is customer perceived value toward tourism destinations. Therefore, focus on what kind of value, experience, impression, or evaluation the customer is mainly expressing in the clause.
+
+==================================================
+TOPIC SET
+==================================================
+
+0 - Experiential Landscape (EL)
+Vietnamese name: Trải nghiệm cảnh quan
+
+Focus:
+Clauses describing emotional, sensory, or experiential reactions to natural landscapes such as caves, mountains, scenic views, beautiful nature, or the feeling of being in a landscape.
+
+This topic includes:
+- caves, mountains, hills, natural scenery
+- beautiful landscapes or impressive views
+- feelings and experiences while visiting natural attractions
+- adventure-like or sensory experiences in natural settings
+- war-related or historical scenery only when the clause mainly emphasizes the physical landscape or emotional experience of the place
+
+Typical meaning:
+The clause is mainly about how the reviewer experienced, felt, or emotionally responded to a natural landscape.
+
+Examples:
+- The cave was beautiful and the whole experience felt amazing.
+- The mountain view was impressive.
+- I really liked the scenery there.
+- Walking through the cave was a memorable experience.
+- The place made me feel close to nature.
+
+Common cues:
+war, cave, people, beautiful, like, slide, vietnam, experience, mountain, feel
+
+Important distinction:
+- Choose Topic 0 when the focus is on natural scenery, caves, mountains, or emotional landscape experience.
+- Do NOT choose Topic 0 if the clause mainly discusses beach, sand, boat, island, or coastal tourism; use Topic 9.
+- Do NOT choose Topic 0 if the clause mainly discusses museum/history learning; use Topic 12.
+- Do NOT choose Topic 0 if the clause mainly gives a general evaluation like “nice place” without landscape focus; use Topic 10.
+- Do NOT choose Topic 0 if the clause mainly discusses price, ticket, service, or staff.
+
+--------------------------------------------------
+
+1 - Travel Costs (TC)
+Vietnamese name: Chi phí du lịch
+
+Focus:
+Clauses about prices, tickets, fees, payment, money, cost, value for money, or expenses during the trip.
+
+This topic includes:
+- ticket prices
+- entrance fees
+- paying, buying, being charged
+- VND, dong, 000, money
+- jeep rental or tour cost when the main focus is money
+- complaints or praise about whether the price is fair, expensive, cheap, or worth it financially
+
+Typical meaning:
+The clause is mainly about financial cost or payment related to the tourism experience.
+
+Examples:
+- The ticket price was too expensive.
+- We had to pay 200,000 VND for the jeep.
+- It was not worth the money.
+- Buying the ticket was costly.
+- The entrance fee was reasonable.
+
+Common cues:
+ticket, 000, price, buy, pay, jeep, money, vnd, dong
+
+Important distinction:
+- Choose Topic 1 when the main focus is money, price, payment, or cost.
+- If “ticket” is mentioned only as part of entry/service handling, but the main issue is process or staff, use Topic 2.
+- If the clause says “worth visiting” in a general sense without price or money, use Topic 10.
+- If the clause mentions a jeep ride mainly as an activity or fun experience, use Topic 3.
+- If the clause mentions a jeep mainly because of price/payment, use Topic 1.
+
+--------------------------------------------------
+
+2 - Service Experience (SE)
+Vietnamese name: Trải nghiệm dịch vụ
+
+Focus:
+Clauses about service quality, staff, offices, facilities, organization, management, or support during the visit.
+
+This topic includes:
+- staff attitude or helpfulness
+- service quality
+- office, room, customer support
+- good or bad service
+- attraction management
+- operational handling of shows, parks, dunes, water areas, or tourism facilities
+- complaints about poor service or praise for helpful staff
+
+Typical meaning:
+The clause is mainly about how the tourism service was delivered or managed.
+
+Examples:
+- The staff were friendly and helpful.
+- The service was bad.
+- The office was disorganized.
+- The room was clean and comfortable.
+- Staff helped us arrange everything.
+
+Common cues:
+dune, show, staff, office, water, service, park, good, bad, room
+
+Important distinction:
+- Choose Topic 2 when staff, service, office, room, or operational support is central.
+- Do NOT choose Topic 2 if the main focus is ticket price or payment; use Topic 1.
+- Do NOT choose Topic 2 if the main focus is fun rides, tour activities, or water park enjoyment; use Topic 3.
+- Do NOT choose Topic 2 if the main focus is environmental cleanliness such as trash, dirty water, toilet problems, or plastic waste; use Topic 11.
+- If a clause mentions dunes or parks but mainly comments on service, choose Topic 2.
+
+--------------------------------------------------
+
+3 - Recreational Activities (RA)
+Vietnamese name: Hoạt động giải trí
+
+Focus:
+Clauses about leisure, entertainment, rides, tours, parks, water parks, fun activities, children’s activities, and recreational enjoyment.
+
+This topic includes:
+- rides
+- tours
+- amusement or water parks
+- fun activities
+- activities for kids or family
+- recreational experiences during a destination visit
+- activities that are enjoyable, exciting, or entertaining
+
+Typical meaning:
+The clause is mainly about what visitors did for fun or recreation.
+
+Examples:
+- The ride was fun.
+- The water park was great for kids.
+- We enjoyed the tour.
+- The park had many fun activities.
+- I would recommend the ride.
+
+Common cues:
+ride, tour, park, good, fun, would, kid, water_park, visit, great
+
+Important distinction:
+- Choose Topic 3 when the clause focuses on activities, rides, tours, parks, fun, or children’s recreation.
+- Do NOT choose Topic 3 if the ride or tour is discussed mainly in terms of cost; use Topic 1.
+- Do NOT choose Topic 3 if the ride or activity is discussed mainly as poor service or staff handling; use Topic 2.
+- Do NOT choose Topic 3 if the clause mainly says the destination is worth visiting in general; use Topic 10.
+- Do NOT choose Topic 3 if the main focus is boat/beach/island/coastal trip; use Topic 9.
+
+--------------------------------------------------
+
+4 - Cultural Attractions (CA)
+Vietnamese name: Điểm tham quan văn hóa
+
+Focus:
+Clauses about cultural attractions such as temples, bridges, architecture, cultural photo spots, scenic cultural sites, or must-see cultural places.
+
+This topic includes:
+- temples, pagodas, religious/cultural places
+- bridges as cultural or architectural attractions
+- architecture
+- cultural views
+- taking photos at cultural attractions
+- must-see or worth-visiting cultural spots
+- beautiful cultural sites
+
+Typical meaning:
+The clause is mainly about a cultural attraction, its beauty, architecture, view, or photo value.
+
+Examples:
+- The temple was beautiful.
+- The bridge is a must-see place.
+- The architecture was impressive.
+- It is a great place for photos.
+- The view from the cultural site was amazing.
+
+Common cues:
+beautiful, temple, visit, view, worth, bridge, must, photo, architecture
+
+Important distinction:
+- Choose Topic 4 when the clause focuses on temples, bridges, cultural architecture, views, or photo-worthy cultural attractions.
+- Do NOT choose Topic 4 if the clause focuses on city heritage buildings such as palace, tower, cathedral, Saigon, or historical urban landmarks; use Topic 7.
+- Do NOT choose Topic 4 if the clause focuses on museum/history/information learning; use Topic 12.
+- Do NOT choose Topic 4 if the clause is only a general “worth visiting” statement without cultural attraction content; use Topic 10.
+- If the clause mentions architecture of a temple or cultural site, choose Topic 4.
+
+--------------------------------------------------
+
+5 - Local Consumption (LC)
+Vietnamese name: Tiêu dùng địa phương
+
+Focus:
+Clauses about food, restaurants, shops, street experiences, souvenirs, night markets, local consumption, and walking around local commercial areas.
+
+This topic includes:
+- food and drinks
+- restaurants and cafés
+- shops and shopping
+- souvenirs
+- street life
+- night markets or night walking
+- local products and local consumption experiences
+
+Typical meaning:
+The clause is mainly about consuming, buying, eating, shopping, or enjoying local commercial/street experiences.
+
+Examples:
+- The local food was good.
+- There were many souvenir shops.
+- The street was nice to walk around at night.
+- Restaurants nearby were good.
+- We bought some local products.
+
+Common cues:
+food, good, shop, street, restaurant, souvenir, night, local, walk
+
+Important distinction:
+- Choose Topic 5 when food, shopping, restaurants, souvenirs, street consumption, or local commercial experience is central.
+- Do NOT choose Topic 5 if “local” is mainly about local people or social atmosphere; use Topic 6 or Topic 8 depending on meaning.
+- Do NOT choose Topic 5 if the clause mainly discusses beach or island scenery; use Topic 9.
+- Do NOT choose Topic 5 if the clause mainly gives a broad evaluation without food/shopping/street focus; use Topic 10.
+- If eating or shopping is only a minor detail, choose the more dominant topic.
+
+--------------------------------------------------
+
+6 - Visitor Response (VR)
+Vietnamese name: Phản hồi của du khách
+
+Focus:
+Clauses expressing visitors’ personal responses, subjective reactions, liking/disliking, intention to return, personal stories, or interpersonal reactions after the experience.
+
+This topic includes:
+- personal liking or disliking
+- intention to return or not return
+- subjective response after the visit
+- comments about people when the main focus is visitor reaction
+- personal stories or being told something by others
+- emotional response not clearly tied to landscape, service, cost, or heritage
+
+Typical meaning:
+The clause is mainly about the reviewer’s personal reaction or response to the tourism experience.
+
+Examples:
+- I really liked this place.
+- I would come back again.
+- We did not like it much.
+- Someone told us to visit this place.
+- I would not return next year.
+
+Common cues:
+people, like, trang, one, would, back, year, even, told, nha
+
+Important distinction:
+- Choose Topic 6 when the clause mainly expresses personal response, liking, intention to return, or subjective reaction.
+- Do NOT choose Topic 6 if the clause mainly discusses tourist crowding, tourist trap, noisy mass tourism, or too many tourists; use Topic 8.
+- Do NOT choose Topic 6 if the personal feeling is clearly about landscape experience; use Topic 0.
+- Do NOT choose Topic 6 if the clause mainly says a place is worth visiting or not worth visiting in a general evaluative way; use Topic 10.
+- Do NOT choose Topic 6 if the clause mainly discusses service, price, food, or history.
+
+--------------------------------------------------
+
+7 - Urban Heritage (UH)
+Vietnamese name: Di sản đô thị
+
+Focus:
+Clauses about urban historical landmarks, city heritage, palaces, towers, cathedrals, old buildings, Saigon/Ho Chi Minh City landmarks, elevators in landmark buildings, or historical urban architecture.
+
+This topic includes:
+- city landmarks
+- historical urban buildings
+- palaces
+- towers
+- cathedrals
+- Saigon / Ho Chi Minh City heritage sites
+- old buildings and famous city architecture
+- urban historical identity
+
+Typical meaning:
+The clause is mainly about historical or architectural heritage located in an urban/city context.
+
+Examples:
+- The palace is an important historical landmark.
+- The cathedral is beautiful.
+- The tower gives a good view of the city.
+- This old building in Saigon is worth seeing.
+- The city has many historical sites.
+
+Common cues:
+city, historical, palace, chi, tower, minh, saigon, building, elevator, cathedral
+
+Important distinction:
+- Choose Topic 7 when the clause focuses on city-based historical landmarks, palaces, towers, cathedrals, or urban heritage buildings.
+- Do NOT choose Topic 7 if the clause focuses on temples, bridges, or general cultural attractions; use Topic 4.
+- Do NOT choose Topic 7 if the clause focuses on museum information or learning history; use Topic 12.
+- Do NOT choose Topic 7 if “building” appears only in a vague general evaluation; use Topic 10 if no heritage focus exists.
+- If the clause mentions Saigon, Ho Chi Minh City, palace, cathedral, tower, or historical city building, Topic 7 is usually appropriate.
+
+--------------------------------------------------
+
+8 - Tourist Crowding (TCr)
+Vietnamese name: Sự đông đúc du khách
+
+Focus:
+Clauses about tourist crowds, mass tourism, tourist traps, noisy tourist areas, over-commercialized attractions, or social discomfort caused by too many tourists.
+
+This topic includes:
+- many tourists
+- crowded attractions
+- tourist traps
+- noisy tourist places
+- mass tourism
+- popular but overcrowded spots
+- negative local/tourist interaction caused by tourism pressure
+- displays or attractions perceived as artificial for tourists
+
+Typical meaning:
+The clause is mainly about crowding, tourist overload, or negative social atmosphere caused by tourism.
+
+Examples:
+- The place was too crowded.
+- It felt like a tourist trap.
+- There were too many tourists everywhere.
+- The attraction was noisy and overcrowded.
+- It is popular but very crowded.
+
+Common cues:
+tourist, display, crowded, attraction, local, spot, trap, noisy, popular, mass
+
+Important distinction:
+- Choose Topic 8 when the clause focuses on tourist crowding, tourist traps, noisy crowds, or mass tourism.
+- Do NOT choose Topic 8 just because the word “tourist” appears; check if crowding or tourist-oriented atmosphere is central.
+- Do NOT choose Topic 8 if the clause is mainly a personal like/dislike response without crowding; use Topic 6.
+- Do NOT choose Topic 8 if the clause is mainly a broad destination evaluation; use Topic 10.
+- Do NOT choose Topic 8 if the clause mainly discusses local food, shops, or street consumption; use Topic 5.
+
+--------------------------------------------------
+
+9 - Coastal Tourism (CT)
+Vietnamese name: Du lịch ven biển
+
+Focus:
+Clauses about beaches, sand, sea, water, boats, sunrise, islands, coastal trips, Mui Ne, biking near coastal areas, or seaside tourism experiences.
+
+This topic includes:
+- beach, sea, sand, water
+- boats and boat trips
+- islands
+- sunrise by the sea
+- Mui Ne
+- coastal trips
+- biking or moving around coastal areas
+- beautiful beach or island scenery
+
+Typical meaning:
+The clause is mainly about coastal, beach, island, or seaside tourism.
+
+Examples:
+- The beach was beautiful.
+- We took a boat trip to the island.
+- The sunrise over the sea was amazing.
+- Mui Ne has beautiful sand dunes.
+- The water was clear and the sand was soft.
+
+Common cues:
+boat, sand, beach, beautiful, sunrise, water, mui, trip, bike, island
+
+Important distinction:
+- Choose Topic 9 when the clause focuses on beach, boat, sand, sea, water, island, sunrise, Mui Ne, or coastal travel.
+- Do NOT choose Topic 9 if water is discussed mainly as dirty/clean environmental condition; use Topic 11.
+- Do NOT choose Topic 9 if sand dunes are mentioned mainly in a general visit evaluation such as “nothing special / worth visiting”; use Topic 10.
+- Do NOT choose Topic 9 if jeep cost or beach-related payment is central; use Topic 1.
+- Do NOT choose Topic 9 if coastal activity is mainly about service handling or staff; use Topic 2.
+
+--------------------------------------------------
+
+10 - Visit Evaluation (VE)
+Vietnamese name: Đánh giá tham quan
+
+Focus:
+Clauses giving a broad evaluation of whether a destination is nice, interesting, worth visiting, not worth visiting, has nothing special, or is good for photos, when no more specific topic dominates.
+
+This topic includes:
+- general worthiness of visiting
+- nice / interesting / nothing special
+- worth or not worth a visit
+- general photo value when not clearly cultural/coastal/heritage
+- broad evaluation of buildings or places
+- simple recommendation or non-recommendation
+
+Typical meaning:
+The clause mainly expresses an overall evaluation of the destination or visit.
+
+Examples:
+- It was worth visiting.
+- Nothing special here.
+- Nice place for a quick visit.
+- The building was interesting.
+- It is good for photos but not very special.
+
+Common cues:
+nothing, nice, building, worth, visit, post, sand_dunes, interesting, photo
+
+Important distinction:
+- Choose Topic 10 only when the clause is mainly a general evaluation and no more specific topic dominates.
+- If the clause evaluates a beach, island, boat, or coastal scenery, choose Topic 9.
+- If the clause evaluates a temple, bridge, or cultural architecture, choose Topic 4.
+- If the clause evaluates a city landmark, palace, tower, cathedral, or urban historical building, choose Topic 7.
+- If the clause evaluates a museum or history-learning experience, choose Topic 12.
+- If the clause evaluates price, service, food, crowding, or environment, choose the corresponding specific topic.
+
+--------------------------------------------------
+
+11 - Environmental Conditions (EC)
+Vietnamese name: Điều kiện môi trường
+
+Focus:
+Clauses about cleanliness, dirtiness, trash, plastic waste, toilets, dirty or clean water, pollution, environmental quality, or disappointment about environmental conditions.
+
+This topic includes:
+- clean or dirty water
+- trash, rubbish, plastic waste
+- toilets and hygiene
+- bottles and litter
+- pollution
+- environmental disappointment
+- cleanliness of public areas
+
+Typical meaning:
+The clause is mainly about the physical environmental condition or cleanliness of the destination.
+
+Examples:
+- The water was dirty.
+- There was plastic trash everywhere.
+- The toilets were not clean.
+- It was sad to see so much rubbish.
+- The beach could be cleaner.
+
+Common cues:
+story, sad, water, clean, dirty, plastic, toilet, everywhere, trash, bottle
+
+Important distinction:
+- Choose Topic 11 when clean/dirty environment, trash, plastic, toilet, pollution, or hygiene is central.
+- Do NOT choose Topic 11 if water is discussed as scenic beach/sea experience; use Topic 9.
+- Do NOT choose Topic 11 if cleanliness refers mainly to a room or service facility; use Topic 2 unless the environmental condition is clearly broader.
+- Do NOT choose Topic 11 if sadness is about war history or museum content; use Topic 12.
+- If the clause mentions trash or plastic everywhere, Topic 11 is usually correct.
+
+--------------------------------------------------
+
+12 - Historical Learning (HL)
+Vietnamese name: Tìm hiểu lịch sử
+
+Focus:
+Clauses about museums, history, Vietnamese history, war history, information, learning, guides, historical interpretation, or educational value.
+
+This topic includes:
+- museums
+- history and historical information
+- Vietnam / Vietnamese history
+- American/Vietnamese war-related learning
+- guides explaining history
+- educational or informative visit experience
+- stories about history when the focus is learning or information
+
+Typical meaning:
+The clause is mainly about learning, understanding, or receiving information about history.
+
+Examples:
+- The museum explains Vietnamese history well.
+- It was interesting to learn about the war.
+- The guide gave us a lot of historical information.
+- The museum is informative.
+- This place helped me understand Vietnam better.
+
+Common cues:
+museum, history, vietnam, interesting, visit, vietnamese, american, information, guide
+
+Important distinction:
+- Choose Topic 12 when the clause focuses on museum content, history, information, education, or guide explanation.
+- Do NOT choose Topic 12 if the clause focuses on city buildings, palaces, towers, or cathedrals as urban landmarks; use Topic 7.
+- Do NOT choose Topic 12 if the clause focuses on temples/bridges/architecture as cultural attractions; use Topic 4.
+- Do NOT choose Topic 12 if “war” appears but the main focus is cave/landscape experience; use Topic 0.
+- Do NOT choose Topic 12 if the clause only says the place is interesting or worth visiting without historical learning content; use Topic 10.
+
+==================================================
+GENERAL ANNOTATION RULES
+==================================================
+
+1. Assign exactly ONE topic label.
+2. Never assign multiple topics.
+3. Choose the most dominant meaning, not every meaning mentioned.
+4. Focus on the clause itself, not the full review context.
+5. Prefer the most specific applicable topic over a vague general one.
+6. Use Topic 10 Visit Evaluation only when no other specific topic is clearly dominant.
+7. If a clause mentions both evaluation and specific content, prioritize the specific content topic.
+8. If a clause is short, vague, or incomplete, infer the most likely topic from its main wording.
+9. Ignore emojis unless they clearly strengthen the meaning.
+10. Do not explain your reasoning.
+11. Output only in the required JSON Lines format.
+12. Do not add extra text before or after the JSON Lines output.
+13. If the clause contains spelling mistakes, infer the intended meaning from context.
+14. If the clause is in Vietnamese, English, or mixed language, apply the same topic definitions.
+
+==================================================
+DECISION PRIORITY RULES
+==================================================
+
+Use these priority rules when a clause could fit more than one topic:
+
+A. Specific feature beats general evaluation.
+- “Beautiful beach and worth visiting” -> Topic 9, not Topic 10
+- “Interesting museum and worth a visit” -> Topic 12, not Topic 10
+- “Helpful staff and good visit” -> Topic 2, not Topic 10
+- “Good local food and nice street” -> Topic 5, not Topic 10
+
+B. Cost beats activity/service when money is central.
+- “The jeep ride was too expensive” -> Topic 1
+- “Tickets cost too much” -> Topic 1
+- “Not worth the money” -> Topic 1
+
+C. Service beats attraction mention when staff/operation is central.
+- “The dunes were nice but the staff were rude” -> Topic 2
+- “The show was good but service was bad” -> Topic 2
+- “The office helped us arrange the tour” -> Topic 2
+
+D. Activity beats general visit judgment when fun/recreation is central.
+- “The ride was fun and worth trying” -> Topic 3
+- “The water park was great for kids” -> Topic 3
+
+E. Coastal tourism beats general landscape when beach/sea/island is central.
+- “Beautiful beach and clear water” -> Topic 9
+- “The sunrise on the island was amazing” -> Topic 9
+- “Boat trip was beautiful” -> Topic 9
+
+F. Environmental condition beats coastal scenery when cleanliness/pollution is central.
+- “The beach was full of plastic trash” -> Topic 11
+- “The water was dirty” -> Topic 11
+- “Clean water and no trash” -> Topic 11
+
+G. Tourist crowding beats general visitor response when crowd/tourist trap is central.
+- “Too many tourists and very noisy” -> Topic 8
+- “It felt like a tourist trap” -> Topic 8
+
+H. Urban heritage, cultural attractions, and historical learning must be separated carefully.
+- “Beautiful temple architecture” -> Topic 4
+- “Historic palace in Ho Chi Minh City” -> Topic 7
+- “Museum explains Vietnamese history” -> Topic 12
+- “Old building worth a photo” -> Topic 7 if it is an urban landmark; Topic 10 if no heritage/urban context is clear
+
+I. Visitor response is used for personal reaction when no other concrete topic dominates.
+- “I liked it and would come back” -> Topic 6
+- “We would not return” -> Topic 6
+- But “I liked the beach” -> Topic 9
+- But “I liked the museum information” -> Topic 12
+- But “I liked the food” -> Topic 5
+
+==================================================
+EDGE CASE GUIDANCE
+==================================================
+
+Use Topic 0 Experiential Landscape when:
+- the clause emphasizes caves, mountains, natural scenery, landscape feeling, or emotional experience in nature
+
+Use Topic 1 Travel Costs when:
+- the clause focuses on ticket price, payment, VND/dong, expensive/cheap, money, or financial value
+
+Use Topic 2 Service Experience when:
+- the clause focuses on staff, service, office, room, management, support, or operational quality
+
+Use Topic 3 Recreational Activities when:
+- the clause focuses on rides, tours, water parks, parks, fun, children’s activities, or entertainment
+
+Use Topic 4 Cultural Attractions when:
+- the clause focuses on temples, bridges, architecture, cultural sites, views, or photo-worthy cultural attractions
+
+Use Topic 5 Local Consumption when:
+- the clause focuses on food, restaurants, shops, souvenirs, street walking, night markets, or local consumption
+
+Use Topic 6 Visitor Response when:
+- the clause focuses on liking/disliking, intention to return, personal response, or subjective reaction
+
+Use Topic 7 Urban Heritage when:
+- the clause focuses on city landmarks, palaces, towers, cathedrals, historical urban buildings, Saigon, Ho Chi Minh City, or urban heritage
+
+Use Topic 8 Tourist Crowding when:
+- the clause focuses on tourists, crowds, noisy places, tourist traps, mass tourism, or over-commercialized attractions
+
+Use Topic 9 Coastal Tourism when:
+- the clause focuses on beach, sea, sand, boat, island, sunrise, Mui Ne, or coastal trip
+
+Use Topic 10 Visit Evaluation when:
+- the clause is mainly “nice / worth visiting / nothing special / interesting / good place / good photo spot”
+- and no stronger specific topic dominates
+
+Use Topic 11 Environmental Conditions when:
+- the clause focuses on cleanliness, dirty water, clean water, trash, plastic, toilet, bottles, pollution, or hygiene
+
+Use Topic 12 Historical Learning when:
+- the clause focuses on museum, history, Vietnam/Vietnamese history, American/Vietnamese war history, information, guides, or educational value
+
+==================================================
+OUTPUT FORMAT
+==================================================
+
+Return the result in JSON Lines format:
+
+{"clause_id":"<id>","topic":<0-12>,"code":"<EL|TC|SE|RA|CA|LC|VR|UH|TCr|CT|VE|EC|HL>","topic_name":"<shortName>"}
+
+Where:
+0 = EL = Experiential Landscape
+1 = TC = Travel Costs
+2 = SE = Service Experience
+3 = RA = Recreational Activities
+4 = CA = Cultural Attractions
+5 = LC = Local Consumption
+6 = VR = Visitor Response
+7 = UH = Urban Heritage
+8 = TCr = Tourist Crowding
+9 = CT = Coastal Tourism
+10 = VE = Visit Evaluation
+11 = EC = Environmental Conditions
+12 = HL = Historical Learning
+
+==================================================
+ANNOTATION TASK
+==================================================
+
+Now annotate the following clause:
+
+Clause ID: {clause_id}
+Clause: "{Clause}"
