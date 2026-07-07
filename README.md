@@ -20,6 +20,7 @@ Trong bối cảnh ngành du lịch Việt Nam hậu đại dịch cạnh tranh 
 
 ## 📊 Mô hình nghiên cứu
 
+![Sơ đồ Smart-PLS](https://github.com/hatrang-ship-it/The-Impact-of-Perceived-Value-on-Tourists-Intention-to-Vietnamese-Tourist-Destinations-LDA-and-ML/blob/8367f9b411d9d3192bc02d67baad9b0873c4326b/5.%20Smart-PLS/tourist_review_k11.png?raw=true)
 Nghiên cứu xây dựng mô hình dựa trên bốn chiều giá trị cảm nhận (biến độc lập) tác động đến ý định quay lại (biến phụ thuộc):
 
 1. **Giá trị chức năng (Functional Value):** Chi phí, chất lượng dịch vụ, môi trường.
